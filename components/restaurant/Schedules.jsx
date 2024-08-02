@@ -1,11 +1,71 @@
-import { StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 
 export default function Schedules({props = {}}){
 
+  const schedulesDatas = [
+    {
+      day: "Lundi",
+      lunch: "",
+      dinner: "",
+      isClosed: true,
+    },
+    {
+      day: "Mardi",
+      lunch: "11h30 - 15h30",
+      dinner: "18h30 - 23h30",
+      isClosed: false,
+    },
+    {
+      day: "Mercredi",
+      lunch: "11h30 - 13h30",
+      dinner: "18h30 - 21h30",
+      isClose: false,
+    },
+    {
+      day: "Jeudi",
+      lunch: "",
+      dinner: "",
+      isClose: true,
+    },
+    {
+      day: "Vendredi",
+      lunch: "11h30 - 15h30",
+      dinner: "18h30 - 23h30",
+      isClose: false,
+    },
+    {
+      day: "Samedi",
+      lunch: "11h30 - 15h30",
+      dinner: "18h30 - 23h30",
+      isClose: false,
+    },
+    {
+      day: "Dimanche",
+      lunch: "11h30 - 13h30",
+      dinner: "18h30 - 21h30",
+      isClose: false,
+    },
+    {
+      day: "Jours fériés",
+      lunch: "11h30 - 14h30",
+      dinner: "17h30 - 22h30",
+      isClose: false,
+    }
+  ];
+
   return(
     <View style={styles.container}>
-
+      <FlatList
+        data={schedulesDatas}
+        renderItem={(item) => (
+          <>
+            <Text style={styles.day}>{item.day}</Text>
+            <Text style={styles.schedules}>{item.lunch}</Text>
+            <Text style={styles.schedules}>{item.dinner}</Text>
+          </>
+        )}
+      />
     </View>
   );
 }
@@ -19,4 +79,13 @@ const styles = StyleSheet.create({
     paddingVertical:8,
     paddingHorizontal:16,
   },
+  day: {
+    fontSize: 18,
+    fontWeight: "bold",
+    letterSpacing:.66,
+  },
+  schedules: {
+    fontSize:16,
+    letterSpacing:.33,
+  }
 });
