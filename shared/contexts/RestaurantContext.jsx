@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useContext, createContext } from "react";
 
@@ -8,6 +9,15 @@ const RestaurantProvider = ({children}) => {
   const [restaurantCard, setRestaurantCard] = useState([]);
   const [meals, setMeals] = useState([]);
   const [restaurantMenus, setRestaurantMenus] = useState([]);
+
+  useEffect(() => {
+    setMeals(mealsList);
+    setRestaurantMenus(menusList);
+    setRestaurantCard({
+      ...mealsList,
+      ...menusList
+    });
+  }, []);
 
   const mealsList = [
     {
