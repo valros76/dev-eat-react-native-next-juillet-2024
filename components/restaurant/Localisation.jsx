@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 
 
-export default function Localisation({props}){
+export default function Localisation({ props = {} }){
 
   const {
     roadNumber = "28", 

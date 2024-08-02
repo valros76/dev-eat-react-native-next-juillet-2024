@@ -1,17 +1,19 @@
 import { Image, SafeAreaView, StyleSheet, Text } from "react-native";
-
+import { Title } from "@/components/globals";
+import { Localisation } from "@/components/restaurant";
 
 export default function HomeScreen(){
   return(
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Dev-Eat</Text>
+      <Title>Dev-Eat</Title>
       <Image
         style={styles.image}
         source={{
           uri: "https://images.unsplash.com/photo-1536523218403-e72792eb06a1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }}
       />
-      <Text>28 Rue d'Avron, 75020 Paris</Text>
+      <Localisation />
+
       <Text>Lundi : Fermé</Text>
       <Text>Mardi : 12h30 - 15h00 / 18h30 - 21h30</Text>
       <Text>Mercredi : 12h30 - 15h00 / 18h30 - 21h30</Text>
