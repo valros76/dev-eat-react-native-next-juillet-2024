@@ -11,7 +11,8 @@ export default function Title({children}){
 
 const styles = StyleSheet.create({
   title:{
-    fontSize:24,
+    fontSize:36,
     fontWeight:"bold",
+    letterSpacing:.36,
   }
 });

@@ -32,7 +32,8 @@ export default function RootLayout(){
           },
           tabBarIconStyle: {
             ...styles.tabBarIconCustom
-          }
+          },
+          href:null,
         }}
       />
     </Tabs>

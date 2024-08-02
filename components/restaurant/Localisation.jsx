@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     marginVertical:8,
   },
   localisation: {
-    fontSize:16,
+    fontSize:21,
     fontWeight:"bold",
     letterSpacing:.18,
   }
