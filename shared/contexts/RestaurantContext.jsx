@@ -85,6 +85,24 @@ const RestaurantProvider = ({children}) => {
     }
   ];
 
+  const menusList = [
+    {
+      name: "Menu Whopper",
+      prices: {
+        hasInPromo: false,
+        promotion: "34%",
+        price: 9.25,
+        currency: "€",
+      },
+      composition: {
+        meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+        drink: "boisson (TODO : créer jeu de données des boissons)",
+        sideDish: "frites (TODO : créer jeu de données des accompagnements)",
+        gift: "cadeau du menu enfant (TODO : créer une jeu de données pour les cadeaux des menus enfants)"
+      }
+    }
+  ];
+
   return(
     <RestaurantContext.Provider 
       value={{
