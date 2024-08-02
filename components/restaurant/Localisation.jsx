@@ -1,7 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 
 
-export default function Localisation({roadNumber, roadName, postalCode, city}){
+export default function Localisation({props}){
+
+  const {
+    roadNumber = "28", 
+    roadName = "rue d'Avron", 
+    postalCode = "75020", 
+    city = "Paris"
+  } = props;
 
   return(
     <View style={styles.container}>
