@@ -1,6 +1,6 @@
 import { Image, SafeAreaView, StyleSheet, Text } from "react-native";
 import { Title } from "@/components/globals";
-import { Localisation } from "@/components/restaurant";
+import { Localisation, Schedules } from "@/components/restaurant";
 
 export default function HomeScreen(){
   return(
@@ -14,13 +14,7 @@ export default function HomeScreen(){
       />
       <Localisation />
 
-      <Text>Lundi : Fermé</Text>
-      <Text>Mardi : 12h30 - 15h00 / 18h30 - 21h30</Text>
-      <Text>Mercredi : 12h30 - 15h00 / 18h30 - 21h30</Text>
-      <Text>Jeudi : Fermé</Text>
-      <Text>Vendredi : 12h30 - 15h00 / 18h30 - 21h30</Text>
-      <Text>Samedi : 12h30 - 15h00 / 18h30 - 21h30</Text>
-      <Text>Dimanche : 12h30 - 15h00 / 18h30 - 21h30</Text>
+      <Schedules/>
     </SafeAreaView>
   );
 }
