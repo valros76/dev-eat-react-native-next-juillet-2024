@@ -95,26 +95,6 @@ const RestaurantProvider = ({children}) => {
     }
   ];
 
-  const menusList = [
-    {
-      name: "Menu Whopper",
-      prices: {
-        hasInPromo: false,
-        promotion: "34%",
-        price: 9.25,
-        currency: "€",
-      },
-      composition: {
-        meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
-        drink: drinksList.filter((item) => item.name.toLowerCase() = "coca-cola sans sucres vanille"),
-        sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
-        gift: {
-          ...giftsList
-        }
-      }
-    }
-  ];
-
   const drinksList = [
     {
       name: "Coca-Cola sans sucres vanille",
@@ -245,6 +225,26 @@ const RestaurantProvider = ({children}) => {
     {
       name: "Livret Dreamworks",
       description: "Livre d'activités Dreamworks"
+    }
+  ];
+
+  const menusList = [
+    {
+      name: "Menu Whopper",
+      prices: {
+        hasInPromo: false,
+        promotion: "34%",
+        price: 9.25,
+        currency: "€",
+      },
+      composition: {
+        meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+        drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+        sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+        gift: {
+          ...giftsList
+        }
+      }
     }
   ];
 
