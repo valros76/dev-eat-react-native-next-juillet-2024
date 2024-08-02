@@ -60,16 +60,16 @@ export default function Schedules({ props = {} }) {
     <View style={styles.container}>
       <FlatList
         data={customDatas || schedulesDatas}
-        renderItem={(item) => (
+        renderItem={(data) => (
           <>
-            <Text style={styles.day}>{item.day}</Text>
-            {!item.isClosed && (
+            <Text style={styles.day}>{data.item.day}</Text>
+            {!data.item.isClosed && (
               <>
-                <Text style={styles.schedules}>{item.lunch}</Text>
-                <Text style={styles.schedules}>{item.dinner}</Text>
+                <Text style={styles.schedules}>{data.item.lunch}</Text>
+                <Text style={styles.schedules}>{data.item.dinner}</Text>
               </>
             )}
-            {item.isClosed && (
+            {data.item.isClosed && (
               <Text style={styles.schedules}>Fermé</Text>
             )}
           </>
