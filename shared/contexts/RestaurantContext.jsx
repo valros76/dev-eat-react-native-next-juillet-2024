@@ -16,6 +16,9 @@ const RestaurantProvider = ({children}) => {
         "Craquez pour LE mythe.",
         "Une viande de boeuf grillé à la flamme, une sauce onctueuse, des tomates fraîches, une salade croquante, des cornichons et des oignons."
       ],
+      stock:{
+        quantity: 50,
+      },
       prices: {
         hasInPromo: false,
         promotion: "34%",
