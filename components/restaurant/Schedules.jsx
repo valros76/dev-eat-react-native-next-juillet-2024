@@ -3,6 +3,8 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 
 export default function Schedules({props = {}}){
 
+  const { customDatas } = props;
+
   const schedulesDatas = [
     {
       day: "Lundi",
@@ -57,7 +59,7 @@ export default function Schedules({props = {}}){
   return(
     <View style={styles.container}>
       <FlatList
-        data={schedulesDatas}
+        data={customDatas || schedulesDatas}
         renderItem={(item) => (
           <>
             <Text style={styles.day}>{item.day}</Text>

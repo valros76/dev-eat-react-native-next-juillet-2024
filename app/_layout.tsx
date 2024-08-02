@@ -20,6 +20,21 @@ export default function RootLayout(){
           }
         }}
       />
+      <Tabs.Screen
+        name="exemple/index"
+        options={{
+          title:"Exemple Responsive",
+          tabBarLabel: () => (<Text>Exemple Responsive</Text>),
+          tabBarIcon: () => (<TabBarIcon name="document-text-outline" size={14}/>),
+          tabBarItemStyle: {
+            ...styles.tabBarItemCustom,
+            backgroundColor: "#FFFFFF"
+          },
+          tabBarIconStyle: {
+            ...styles.tabBarIconCustom
+          }
+        }}
+      />
     </Tabs>
   );
 }
