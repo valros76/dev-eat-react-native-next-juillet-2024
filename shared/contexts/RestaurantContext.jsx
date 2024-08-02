@@ -108,7 +108,9 @@ const RestaurantProvider = ({children}) => {
         meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
         drink: drinksList.filter((item) => item.name.toLowerCase() = "coca-cola sans sucres vanille"),
         sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
-        gift: "cadeau du menu enfant (TODO : créer une jeu de données pour les cadeaux des menus enfants)"
+        gift: {
+          ...giftsList
+        }
       }
     }
   ];
