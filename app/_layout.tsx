@@ -36,6 +36,23 @@ export default function RootLayout(){
           href:null,
         }}
       />
+
+      <Tabs.Screen
+        name="restaurant-card/index"
+        options={{
+          title: "Carte du restaurant",
+          tabBarLabel: () => (<Text>La carte</Text>),
+          tabBarIcon: () => (<TabBarIcon name="fast-food-outline" size={14}/>),
+          tabBarItemStyle: {
+            ...styles.tabBarItemCustom,
+            backgroundColor: "#FFFFFF"
+          },
+          tabBarIconStyle: {
+            ...styles.tabBarIconCustom
+          },
+        }}
+      />
+
     </Tabs>
   );
 }

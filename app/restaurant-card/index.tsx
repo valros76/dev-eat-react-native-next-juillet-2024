@@ -5,7 +5,7 @@ export default function RestaurantCardScreen(){
   return(
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-
+        
       </ScrollView>
     </SafeAreaView>
   );
