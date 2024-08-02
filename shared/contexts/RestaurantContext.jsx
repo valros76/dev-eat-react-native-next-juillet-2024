@@ -106,10 +106,69 @@ const RestaurantProvider = ({children}) => {
       },
       composition: {
         meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
-        drink: "boisson (TODO : créer jeu de données des boissons)",
+        drink: drinksList.filter((item) => item.name.toLowerCase() = "coca-cola sans sucres vanille"),
         sideDish: "frites (TODO : créer jeu de données des accompagnements)",
         gift: "cadeau du menu enfant (TODO : créer une jeu de données pour les cadeaux des menus enfants)"
       }
+    }
+  ];
+
+  const drinksList = [
+    {
+      name: "Coca-Cola sans sucres vanille",
+      description: [
+        "Edition limité : Coca-Cola sans sucre vanille",
+      ],
+      stock:{
+        quantity: 25,
+      },
+      sizes:{
+        small: "30cl",
+        medium: "40cl",
+        big: "50cl"
+      },
+      prices: {
+        hasInPromo: false,
+        promotion: "34%",
+        price: 3.90,
+        currency: "€",
+      },
+      allergens: [],
+      canContainAllergens: [],
+      nutritonalValues: {
+        part: {
+          energeticValues: "2.00",
+          energeticValuesUnit: "kcal",
+          fattySubstances: "0",
+          fattySubstanceUnit: "g",
+          saturatedFattyAcids: "0",
+          saturatedFattyAcidsUnit: "g",
+          proteins: "0",
+          proteinsUnit: "g",
+          carbonhydrates: "0",
+          carbonhydratesUnit: "g",
+          fastSugars: "0.80",
+          fastSugarsUnit: "g",
+          salt: "0.05",
+          saltUnit: "g"
+        },
+        perCentGrams: {
+          energeticValues: "0",
+          energeticValuesUnit: "kcal",
+          fattySubstances: "0",
+          fattySubstanceUnit: "g",
+          saturatedFattyAcids: "0",
+          saturatedFattyAcidsUnit: "g",
+          proteins: "0",
+          proteinsUnit: "g",
+          carbonhydrates: "0",
+          carbonhydratesUnit: "g",
+          fastSugars: "0",
+          fastSugarsUnit: "g",
+          salt: "0.01",
+          saltUnit: "g"
+        }
+      },
     }
   ];
 
