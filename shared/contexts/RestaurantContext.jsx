@@ -172,6 +172,69 @@ const RestaurantProvider = ({children}) => {
     }
   ];
 
+  const sideDishesList = [
+    {
+      name: "Frites",
+      description: [
+        "Comment résister ? Dorées, croustillantes et surtout généreuses... nos frites sont parfaites !",
+      ],
+      stock:{
+        quantity: 50,
+      },
+      sizes:[
+        "small",
+        "medium",
+        "big"
+      ],
+      prices: {
+        hasInPromo: false,
+        promotion: "34%",
+        price: 2.65,
+        currency: "€",
+      },
+      allergens: [],
+      canContainAllergens: [
+        "Fruits à coques",
+        "Lait",
+        "Gluten"
+      ],
+      nutritonalValues: {
+        part: {
+          energeticValues: "239",
+          energeticValuesUnit: "kcal",
+          fattySubstances: "10",
+          fattySubstanceUnit: "g",
+          saturatedFattyAcids: "3.20",
+          saturatedFattyAcidsUnit: "g",
+          proteins: "3",
+          proteinsUnit: "g",
+          carbonhydrates: "36",
+          carbonhydratesUnit: "g",
+          fastSugars: "0.50",
+          fastSugarsUnit: "g",
+          salt: "0.35",
+          saltUnit: "g"
+        },
+        perCentGrams: {
+          energeticValues: "266",
+          energeticValuesUnit: "kcal",
+          fattySubstances: "11",
+          fattySubstanceUnit: "g",
+          saturatedFattyAcids: "3.60",
+          saturatedFattyAcidsUnit: "g",
+          proteins: "3.30",
+          proteinsUnit: "g",
+          carbonhydrates: "40",
+          carbonhydratesUnit: "g",
+          fastSugars: "0.50",
+          fastSugarsUnit: "g",
+          salt: "0.40",
+          saltUnit: "g"
+        }
+      },
+    }
+  ];
+
   return(
     <RestaurantContext.Provider 
       value={{
