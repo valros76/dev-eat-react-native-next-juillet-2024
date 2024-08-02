@@ -6,19 +6,6 @@ const RestaurantContext = createContext();
 
 const RestaurantProvider = ({children}) => {
 
-  const [restaurantCard, setRestaurantCard] = useState([]);
-  const [meals, setMeals] = useState([]);
-  const [restaurantMenus, setRestaurantMenus] = useState([]);
-
-  useEffect(() => {
-    setMeals(mealsList);
-    setRestaurantMenus(menusList);
-    setRestaurantCard({
-      ...mealsList,
-      ...menusList
-    });
-  }, []);
-
   const mealsList = [
     {
       name: "Whopper",
@@ -247,6 +234,14 @@ const RestaurantProvider = ({children}) => {
       }
     }
   ];
+
+  const [restaurantCard, setRestaurantCard] = useState({
+    ...mealsList,
+    ...menusList
+  });
+  const [meals, setMeals] = useState(mealsList);
+  const [restaurantMenus, setRestaurantMenus] = useState(menusList);
+
 
   return(
     <RestaurantContext.Provider 

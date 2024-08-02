@@ -13,17 +13,23 @@ export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
     useRestaurantContext();
 
+    /**
+     * TODO : Améliorer la composition, en atomiser les composants de la page.
+     * TODO : Créer un composant d'affichage de carte complète, un composant d'affichage de plat/menu, un composant modal qui affichera les informations du plat ou du menu.
+     * TODO : Simuler la création d'un panier de commande.
+     */
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <FlatList
           data={restaurantCard}
-          renderItem={(item: any) => (
+          renderItem={(data: any) => (
             <View>
-              <Text>{item.name}</Text>
+              <Text>{data.item.name}</Text>
               <View>
                 <Feather name="eye" size={24} color="black" />
-                <Text>{item.prices.price.toFixed(2)} {item.prices.currency}</Text>
+                <Text>{data.item.prices.price.toFixed(2)} {data.item.prices.currency}</Text>
               </View>
             </View>
           )}
