@@ -1,11 +1,33 @@
-import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
+import {
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
+import Feather from '@expo/vector-icons/Feather';
 
+export default function RestaurantCardScreen() {
+  const { restaurantCard, meals, restaurantMenus } =
+    useRestaurantContext();
 
-export default function RestaurantCardScreen(){
-  return(
+  return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        
+        <FlatList
+          data={restaurantCard}
+          renderItem={(item: any) => (
+            <View>
+              <Text>{item.name}</Text>
+              <View>
+                <Feather name="eye" size={24} color="black" />
+                <Text>{item.prices.price.toFixed(2)} {item.prices.currency}</Text>
+              </View>
+            </View>
+          )}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -13,9 +35,9 @@ export default function RestaurantCardScreen(){
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
   },
   scrollView: {
-    width:"100%",
-  }
+    width: "100%",
+  },
 });
