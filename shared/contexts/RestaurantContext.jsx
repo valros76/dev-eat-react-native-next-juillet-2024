@@ -107,7 +107,7 @@ const RestaurantProvider = ({children}) => {
       composition: {
         meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
         drink: drinksList.filter((item) => item.name.toLowerCase() = "coca-cola sans sucres vanille"),
-        sideDish: "frites (TODO : créer jeu de données des accompagnements)",
+        sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
         gift: "cadeau du menu enfant (TODO : créer une jeu de données pour les cadeaux des menus enfants)"
       }
     }
@@ -232,6 +232,17 @@ const RestaurantProvider = ({children}) => {
           saltUnit: "g"
         }
       },
+    }
+  ];
+
+  const giftsList = [
+    {
+      name: "Jeu de cartes olé mains",
+      description: "Jeu de cartes Olé Mains",
+    },
+    {
+      name: "Livret Dreamworks",
+      description: "Livre d'activités Dreamworks"
     }
   ];
 
