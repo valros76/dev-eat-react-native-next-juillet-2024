@@ -6,7 +6,7 @@ export default function RootLayout(){
   return(
     <Tabs>
       <Tabs.Screen
-        name="home/index"
+        name="home"
         options={{
           title:"Accueil",
           tabBarLabel: () => (<Text>Accueil</Text>),
