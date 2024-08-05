@@ -10,7 +10,10 @@ import {
 import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
 import Feather from "@expo/vector-icons/Feather";
 import { useEffect } from "react";
-import { RestaurantCard } from "@/components/restaurant";
+import {
+  RestaurantCard,
+  RestaurantCardInfos,
+} from "@/components/restaurant";
 
 export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
@@ -39,13 +42,24 @@ export default function RestaurantCardScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        {/* <RestaurantCardInfos
+          props={{
+            title: meals[0].name,
+            imageUrl: meals[0].image.url,
+            description: meals[0].description,
+            ingredients: meals[0].ingredients,
+            allergens: meals[0].allergens,
+            canContainAllergens: meals[0].canContainAllergens,
+            nutritonalValues: meals[0].nutritonalValues,
+          }}
+        /> */}
         <FlatList
           data={restaurantCard}
           horizontal={false}
           numColumns={2}
           contentContainerStyle={styles.restaurantCardGrid}
           columnWrapperStyle={{
-            gap:12,
+            gap: 12,
           }}
           renderItem={(data: any) => (
             <RestaurantCard
@@ -69,7 +83,7 @@ export default function RestaurantCardScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:"#F6F4E8",
+    backgroundColor: "#F6F4E8",
   },
   scrollView: {
     width: "100%",
@@ -77,8 +91,8 @@ const styles = StyleSheet.create({
   restaurantCardGrid: {
     width: "auto",
     marginHorizontal: "auto",
-    paddingVertical:24,
-    paddingHorizontal:12,
+    paddingVertical: 24,
+    paddingHorizontal: 12,
   },
   restaurantCardContainer: {
     width: 220,
@@ -88,9 +102,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   restaurantCardTitle: {
-    fontSize:20,
-    fontWeight:"bold",
-    letterSpacing:.20,
+    fontSize: 20,
+    fontWeight: "bold",
+    letterSpacing: 0.2,
   },
   restaurantCardImageContainer: {
     width: "100%",
@@ -106,8 +120,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   restaurantCardPrice: {
-    fontSize:16,
-    fontWeight:600,
-    letterSpacing:.16,
-  }
+    fontSize: 16,
+    fontWeight: 600,
+    letterSpacing: 0.16,
+  },
 });
