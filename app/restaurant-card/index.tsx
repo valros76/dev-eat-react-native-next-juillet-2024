@@ -12,6 +12,7 @@ import Feather from "@expo/vector-icons/Feather";
 import { useEffect } from "react";
 import {
   RestaurantCard,
+  RestaurantCardInfos
 } from "@/components/restaurant";
 
 export default function RestaurantCardScreen() {
@@ -41,6 +42,19 @@ export default function RestaurantCardScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+
+        <RestaurantCardInfos
+          props={{
+            title: meals[0].name,
+            imageUrl: meals[0].image.url,
+            description: meals[0].description,
+            ingredients: meals[0].ingredients,
+            allergens: meals[0].allergens,
+            canContainAllergens: meals[0].canContainAllergens,
+            nutritonalValues: meals[0].nutritonalValues,
+          }}
+        />
+
         <FlatList
           data={restaurantCard}
           horizontal={false}
