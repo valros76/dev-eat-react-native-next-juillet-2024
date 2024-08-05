@@ -9,18 +9,76 @@ import {
 } from "react-native";
 import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
 import Feather from "@expo/vector-icons/Feather";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   RestaurantCard,
-  RestaurantCardInfos
+  RestaurantCardInfos,
 } from "@/components/restaurant";
+
+type RestaurantCardInfos = {
+  title?: string;
+  imageUrl?: string;
+  description?: string;
+  ingredients?: string[];
+  allergens?: string[];
+  canContainAllergens?: string[];
+  nutritonalValues?: {
+    part?: {
+      energeticValues?: string;
+      energeticValuesUnit?: string;
+      fattySubstances?: string;
+      fattySubstanceUnit?: string;
+      saturatedFattyAcids?: string;
+      saturatedFattyAcidsUnit?: string;
+      proteins?: string;
+      proteinsUnit?: string;
+      carbonhydrates?: string;
+      carbonhydratesUnit?: string;
+      fastSugars?: string;
+      fastSugarsUnit?: string;
+      salt?: string;
+      saltUnit?: string;
+    };
+    perCentsGram?: {
+      energeticValues?: string;
+      energeticValuesUnit?: string;
+      fattySubstances?: string;
+      fattySubstanceUnit?: string;
+      saturatedFattyAcids?: string;
+      saturatedFattyAcidsUnit?: string;
+      proteins?: string;
+      proteinsUnit?: string;
+      carbonhydrates?: string;
+      carbonhydratesUnit?: string;
+      fastSugars?: string;
+      fastSugarsUnit?: string;
+      salt?: string;
+      saltUnit?: string;
+    };
+  };
+};
 
 export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
     useRestaurantContext();
 
+  const [infos, setInfos] = useState<any[]>([]);
+
+  const showInfos = (item: any) => {
+    setInfos([
+      {
+        title: item?.name,
+        imageUrl: item?.image?.url,
+        description: item?.description,
+        ingredients: item?.ingredients,
+        allergens: item?.allergens,
+        canContainAllergens: item?.canContainAllergens,
+        nutritonalValues: item?.nutritonalValues,
+      },
+    ]);
+  };
+
   /**
-   * TODO : Créer un composant d'affichage de carte complète, un composant d'affichage de plat/menu, un composant modal qui affichera les informations du plat ou du menu.
    * TODO : Simuler la création d'un panier de commande.
    */
 
@@ -42,7 +100,6 @@ export default function RestaurantCardScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-
         <RestaurantCardInfos
           props={{
             title: meals[0].name,
@@ -50,7 +107,8 @@ export default function RestaurantCardScreen() {
             description: meals[0].description,
             ingredients: meals[0].ingredients,
             allergens: meals[0].allergens,
-            canContainAllergens: meals[0].canContainAllergens,
+            canContainAllergens:
+              meals[0].canContainAllergens,
             nutritonalValues: meals[0].nutritonalValues,
           }}
         />
