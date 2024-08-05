@@ -52,7 +52,7 @@ export default function RestaurantCardScreen() {
               <Text style={styles.restaurantCardTitle}>
                 {data.item.name}
               </Text>
-
+              
               <View
                 style={styles.restaurantCardImageContainer}
               >
@@ -90,6 +90,7 @@ export default function RestaurantCardScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:"#F6F4E8",
   },
   scrollView: {
     width: "100%",
