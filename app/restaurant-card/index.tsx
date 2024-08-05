@@ -46,9 +46,13 @@ export default function RestaurantCardScreen() {
           contentContainerStyle={styles.restaurantCardGrid}
           renderItem={(data: any) => (
             <View style={styles.restaurantCardContainer}>
-              <Text>{data.item.name}</Text>
+              <Text style={styles.restaurantCardTitle}>
+                {data.item.name}
+              </Text>
 
-              <View style={styles.restaurantCardImageContainer}>
+              <View
+                style={styles.restaurantCardImageContainer}
+              >
                 <Image
                   source={{
                     uri: data.item.image.url,
@@ -64,7 +68,7 @@ export default function RestaurantCardScreen() {
                   size={24}
                   color="black"
                 />
-                <Text>
+                <Text style={styles.restaurantCardPrice}>
                   {data.item.prices.price.toFixed(2)}{" "}
                   {data.item.prices.currency}
                 </Text>
@@ -94,12 +98,17 @@ const styles = StyleSheet.create({
   restaurantCardContainer: {
     width: 220,
     maxWidth: 220,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
   },
-  restaurantCardImageContainer:{
-    width:"100%",
+  restaurantCardTitle: {
+    fontSize:20,
+    fontWeight:"bold",
+    letterSpacing:.20,
+  },
+  restaurantCardImageContainer: {
+    width: "100%",
   },
   restaurantCardImage: {
     width: "100%",
@@ -108,6 +117,12 @@ const styles = StyleSheet.create({
   },
   priceContainer: {
     flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
   },
+  restaurantCardPrice: {
+    fontSize:16,
+    fontWeight:600,
+    letterSpacing:.16,
+  }
 });
