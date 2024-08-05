@@ -1,5 +1,6 @@
 import {
   FlatList,
+  Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -20,42 +21,55 @@ export default function RestaurantCardScreen() {
    * TODO : Simuler la création d'un panier de commande.
    */
 
-  const debug = (value:any) => {
+  const debug = (value: any) => {
     console.table(value);
     return true;
-  }
+  };
 
   const generateKeyForListItem = (keyBase: string) => {
     const randomIDLength = 12;
-    const randomID = Math.random().toString(36).substring(2, randomIDLength + 2);
+    const randomID = Math.random()
+      .toString(36)
+      .substring(2, randomIDLength + 2);
     keyBase = keyBase.replaceAll(" ", "").trim();
     keyBase = `${keyBase}-${randomID}`;
     return keyBase;
-  }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-          <FlatList
-            data={restaurantCard}
-            renderItem={(data: any) => (
-              <View style={styles.restaurantCardContainer}>
-                <Text>{data.item.name}</Text>
-                <View style={styles.priceContainer}>
-                  <Feather
-                    name="eye"
-                    size={24}
-                    color="black"
-                  />
-                  <Text>
-                    {data.item.prices.price.toFixed(2)}{" "}
-                    {data.item.prices.currency}
-                  </Text>
-                </View>
+        <FlatList
+          data={restaurantCard}
+          horizontal={false}
+          numColumns={2}
+          contentContainerStyle={styles.restaurantCardGrid}
+          renderItem={(data: any) => (
+            <View style={styles.restaurantCardContainer}>
+              <Text>{data.item.name}</Text>
+              <Image
+                source={{
+                  uri: data.item.image.url,
+                }}
+                style={styles.restaurantCardImage}
+              />
+              <View style={styles.priceContainer}>
+                <Feather
+                  name="eye"
+                  size={24}
+                  color="black"
+                />
+                <Text>
+                  {data.item.prices.price.toFixed(2)}{" "}
+                  {data.item.prices.currency}
+                </Text>
               </View>
-            )}
-            keyExtractor={(item) => generateKeyForListItem(item.name)}
-          />
+            </View>
+          )}
+          keyExtractor={(item) =>
+            generateKeyForListItem(item.name)
+          }
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -68,13 +82,24 @@ const styles = StyleSheet.create({
   scrollView: {
     width: "100%",
   },
+  restaurantCardGrid: {
+    width: "auto",
+    marginHorizontal: "auto",
+  },
   restaurantCardContainer: {
+    width: 220,
+    maxWidth: 220,
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: "#ccc",
+  },
+  restaurantCardImage: {
+    width: "100%",
+    height: "auto",
+    aspectRatio: 1 / 1,
   },
   priceContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
 });

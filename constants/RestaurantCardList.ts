@@ -5,6 +5,9 @@ export const mealsList = [
       "Craquez pour LE mythe.",
       "Une viande de boeuf grillé à la flamme, une sauce onctueuse, des tomates fraîches, une salade croquante, des cornichons et des oignons."
     ],
+    image: {
+      url: "assets/images/whopper.png"
+    },
     stock:{
       quantity: 50,
     },
@@ -210,6 +213,9 @@ export const giftsList = [
 export const menusList = [
   {
     name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
     prices: {
       hasInPromo: false,
       promotion: "34%",
@@ -224,5 +230,863 @@ export const menusList = [
         ...giftsList
       }
     }
-  }
+  },
+
+  {
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },{
+    name: "Menu Whopper",
+    image: {
+      url: "assets/images/menu-whopper.png"
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.25,
+      currency: "€",
+    },
+    composition: {
+      meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
+      drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
+      sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
+      gift: {
+        ...giftsList
+      }
+    }
+  },
+  
 ];
