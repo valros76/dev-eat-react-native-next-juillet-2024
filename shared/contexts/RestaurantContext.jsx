@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useContext, createContext } from "react";
+import { createContext } from "react";
 import {
   mealsList,
   drinksList,
@@ -13,10 +13,10 @@ const RestaurantContext = createContext();
 
 const RestaurantProvider = ({children}) => {
 
-  const [restaurantCard, setRestaurantCard] = useState({
+  const [restaurantCard, setRestaurantCard] = useState([
     ...mealsList,
     ...menusList
-  });
+  ]);
   const [meals, setMeals] = useState(mealsList);
   const [restaurantMenus, setRestaurantMenus] = useState(menusList);
 
@@ -25,7 +25,10 @@ const RestaurantProvider = ({children}) => {
       value={{
         restaurantCard, 
         meals, 
-        restaurantMenus
+        restaurantMenus,
+        setRestaurantCard,
+        setMeals,
+        setRestaurantMenus
       }}
     >
       {children}
