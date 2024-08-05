@@ -47,12 +47,17 @@ export default function RestaurantCardScreen() {
           renderItem={(data: any) => (
             <View style={styles.restaurantCardContainer}>
               <Text>{data.item.name}</Text>
-              <Image
-                source={{
-                  uri: data.item.image.url,
-                }}
-                style={styles.restaurantCardImage}
-              />
+
+              <View style={styles.restaurantCardImageContainer}>
+                <Image
+                  source={{
+                    uri: data.item.image.url,
+                  }}
+                  style={styles.restaurantCardImage}
+                  resizeMode="contain"
+                />
+              </View>
+
               <View style={styles.priceContainer}>
                 <Feather
                   name="eye"
@@ -92,6 +97,9 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
+  },
+  restaurantCardImageContainer:{
+    width:"100%",
   },
   restaurantCardImage: {
     width: "100%",
