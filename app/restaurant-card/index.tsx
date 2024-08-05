@@ -109,7 +109,10 @@ export default function RestaurantCardScreen() {
       <ScrollView style={styles.scrollView}>
         {Object?.hasOwn(infos, "title") && (
           <RestaurantCardInfos
-            props={infos}
+            props={{
+              ...infos,
+              ctaAction: closeInfos,
+            }}
           />
         )}
 
