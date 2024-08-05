@@ -69,7 +69,7 @@ export default function RestaurantCardInfos({ props = {} }) {
 
         {ingredients &&
           (<View style={styles.ingredientsSection}>
-            <Text 
+            <Text
               style={styles.ingredientsSectionTitle}
             >
               Ingrédients
@@ -90,30 +90,44 @@ export default function RestaurantCardInfos({ props = {} }) {
                 </Text>
               </View>
             ))}
-            
+
           </View>)}
 
-        {allergens && (allergens.map((item) => (
-          <View
-            key={generateKeyForListItem(item)}
-            style={styles.allergensContainer}
-          >
-            <Text style={styles.allergens}>
-              {item}
-            </Text>
-          </View>
-        )))}
+        {allergens && (<View style={styles.allergensSection}>
+          <Text style={styles.allergensSectionTitle}>
+            Allergènes
+          </Text>
 
-        {canContainAllergens && (canContainAllergens.map((item) => (
-          <View
-            key={generateKeyForListItem(item)}
-            style={styles.canContainAllergernsContainer}
-          >
-            <Text style={styles.canContainAllergens}>
-              {item}
-            </Text>
-          </View>
-        )))}
+          {allergens.map((item) => (
+            <View
+              key={generateKeyForListItem(item)}
+              style={styles.allergensContainer}
+            >
+              <Text style={styles.allergens}>
+                {item}
+              </Text>
+            </View>
+          ))}
+
+        </View>)}
+
+        {canContainAllergens && (<View style={styles.canContainAllergensSection}>
+          <Text style={styles.canContainAllergensSectionTitle}>
+            Peut contenir des traces de :
+          </Text>
+
+          {canContainAllergens.map((item) => (
+            <View
+              key={generateKeyForListItem(item)}
+              style={styles.canContainAllergernsContainer}
+            >
+              <Text style={styles.canContainAllergens}>
+                {item}
+              </Text>
+            </View>
+          ))}
+
+        </View>)}
 
         {nutritonalValues && (
           <View style={styles.nutritionalValuesContainer}>
