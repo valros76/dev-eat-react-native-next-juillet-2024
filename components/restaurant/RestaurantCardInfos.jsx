@@ -1,4 +1,4 @@
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useEffect } from "react";
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
@@ -35,10 +35,10 @@ export default function RestaurantCardInfos({ props = {} }) {
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
 
-        <Pressable 
+        <Pressable
           onPress={() => ctaAction && ctaAction()}
           style={{
-            marginBottom:24,
+            marginBottom: 24,
           }}
         >
           <Feather
@@ -67,17 +67,53 @@ export default function RestaurantCardInfos({ props = {} }) {
           {item}
         </Text>)))}
 
-        {ingredients && (ingredients.map((item) => (<Text style={styles.ingredients} key={generateKeyForListItem(item)}>
-          {item}
-        </Text>)))}
+        {ingredients &&
+          (<View style={styles.ingredientsSection}>
+            <Text 
+              style={styles.ingredientsSectionTitle}
+            >
+              Ingrédients
+            </Text>
 
-        {allergens && (allergens.map((item) => (<Text style={styles.allergens} key={generateKeyForListItem(item)}>
-          {item}
-        </Text>)))}
+            {ingredients.map((item) => (
+              <View
+                key={generateKeyForListItem(item)}
+                style={styles.ingredientsContainer}
+              >
+                <Text style={styles.ingredients}>
+                  <MaterialCommunityIcons
+                    name="food-variant"
+                    size={14}
+                    color="#B8A747"
+                  />
+                  {item}
+                </Text>
+              </View>
+            ))}
+            
+          </View>)}
 
-        {canContainAllergens && (canContainAllergens.map((item) => (<Text style={styles.canContainAllergens} key={generateKeyForListItem(item)}>
-          {item}
-        </Text>)))}
+        {allergens && (allergens.map((item) => (
+          <View
+            key={generateKeyForListItem(item)}
+            style={styles.allergensContainer}
+          >
+            <Text style={styles.allergens}>
+              {item}
+            </Text>
+          </View>
+        )))}
+
+        {canContainAllergens && (canContainAllergens.map((item) => (
+          <View
+            key={generateKeyForListItem(item)}
+            style={styles.canContainAllergernsContainer}
+          >
+            <Text style={styles.canContainAllergens}>
+              {item}
+            </Text>
+          </View>
+        )))}
 
         {nutritonalValues && (
           <View style={styles.nutritionalValuesContainer}>
@@ -161,19 +197,19 @@ export default function RestaurantCardInfos({ props = {} }) {
 }
 
 const styles = StyleSheet.create({
-  scrollView:{
-    width:"100%",
-    padding:12,
+  scrollView: {
+    width: "100%",
+    padding: 12,
   },
   container: {
     flex: 1,
-    maxWidth:350,
-    marginHorizontal:"auto",
+    maxWidth: 350,
+    marginHorizontal: "auto",
     paddingVertical: 36,
     paddingHorizontal: 24,
-    boxShadow:"inset 0 -1px 6px -5px #333, inset 0 1px 6px -5px #333, inset -1px 0 6px -5px #333, inset 1px 0 6px -5px #333",
-    borderRadius:12,
-    backgroundColor:"#FFFFFF",
+    boxShadow: "inset 0 -1px 6px -5px #333, inset 0 1px 6px -5px #333, inset -1px 0 6px -5px #333, inset 1px 0 6px -5px #333",
+    borderRadius: 12,
+    backgroundColor: "#FFFFFF",
   },
   title: {
     width: "auto",
@@ -193,21 +229,21 @@ const styles = StyleSheet.create({
     aspectRatio: 1 / 1,
   },
   description: {
-    width:"100%",
+    width: "100%",
     maxWidth: 350,
     textAlign: "left",
-    lineHeight:"150%",
+    lineHeight: "150%",
     marginHorizontal: "auto",
   },
   ingredients: {
-    width:"100%",
+    width: "100%",
     maxWidth: 350,
     textAlign: "left",
     fontWeight: 600,
     marginHorizontal: "auto",
   },
   allergens: {
-    width:"100%",
+    width: "100%",
     maxWidth: 350,
     textAlign: "left",
     fontSize: 12,
@@ -215,7 +251,7 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   canContainAllergens: {
-    width:"100%",
+    width: "100%",
     maxWidth: 350,
     textAlign: "left",
     fontSize: 12,
@@ -223,47 +259,47 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   nutritionalValuesContainer: {
-    width:"100%",
-    backgroundColor:"#FBFAF4",
-    borderRadius:12,
-    paddingVertical:12,
-    paddingHorizontal:24,
-    gap:6,
-    boxShadow:"inset 0 -1px 6px -5px #333, inset 0 1px 6px -5px #333, inset -1px 0 6px -5px #333, inset 1px 0 6px -5px #333",
+    width: "100%",
+    backgroundColor: "#FBFAF4",
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    gap: 6,
+    boxShadow: "inset 0 -1px 6px -5px #333, inset 0 1px 6px -5px #333, inset -1px 0 6px -5px #333, inset 1px 0 6px -5px #333",
   },
   nutritionalValuesContainerTitle: {
-    textAlign:"center",
-    fontWeight:700,
-    letterSpacing:.14,
+    textAlign: "center",
+    fontWeight: 700,
+    letterSpacing: .14,
   },
   nutritionalValuesDatas: {
-    width:"100%",
-    gap:12,
-    paddingVertical:12,
+    width: "100%",
+    gap: 12,
+    paddingVertical: 12,
   },
   nutritionalDataContainer: {
-    width:"100%",
+    width: "100%",
     justifyContent: "center",
-    alignItems:"center",
-    gap:3,
+    alignItems: "center",
+    gap: 3,
   },
   nutritionalDataTitle: {
-    fontWeight:500,
+    fontWeight: 500,
   },
   nutritionalDataContent: {
-    letterSpacing:.14,
+    letterSpacing: .14,
   },
   closeIcon: {
-    width:48,
-    height:48,
-    display:"flex",
-    flexDirection:"row",
-    justifyContent:"center",
-    alignItems:"center",
-    borderRadius:48,
-    backgroundColor:"#e23926",
-    textAlign:"center",
-    boxShadow:"0 4px 0 -1px #333",
-    marginLeft:"auto",
+    width: 48,
+    height: 48,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 48,
+    backgroundColor: "#e23926",
+    textAlign: "center",
+    boxShadow: "0 4px 0 -1px #333",
+    marginLeft: "auto",
   }
 });
