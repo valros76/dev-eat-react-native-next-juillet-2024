@@ -44,6 +44,9 @@ export default function RestaurantCardScreen() {
           horizontal={false}
           numColumns={2}
           contentContainerStyle={styles.restaurantCardGrid}
+          columnWrapperStyle={{
+            gap:12,
+          }}
           renderItem={(data: any) => (
             <View style={styles.restaurantCardContainer}>
               <Text style={styles.restaurantCardTitle}>
@@ -94,6 +97,8 @@ const styles = StyleSheet.create({
   restaurantCardGrid: {
     width: "auto",
     marginHorizontal: "auto",
+    paddingVertical:24,
+    paddingHorizontal:12,
   },
   restaurantCardContainer: {
     width: 220,
