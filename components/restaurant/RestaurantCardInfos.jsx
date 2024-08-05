@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 
@@ -24,6 +25,9 @@ export default function RestaurantCardInfos({ props = {} }) {
     keyBase = `${keyBase}-${randomID}`;
     return keyBase;
   };
+
+  useEffect(() => {
+  }, [props.title, props.description, props.imageUrl, props.ingredients, props.allergens, props.canContainAllergens, props.nutritonalValues]);
 
   return (
     <ScrollView style={styles.scrollView}>

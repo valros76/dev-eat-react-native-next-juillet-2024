@@ -62,10 +62,10 @@ export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
     useRestaurantContext();
 
-  const [infos, setInfos] = useState<any[]>([]);
+  const [infos, setInfos] = useState<RestaurantCardInfos>({});
 
   const showInfos = (item: any) => {
-    setInfos([
+    setInfos(
       {
         title: item?.name,
         imageUrl: item?.image?.url,
@@ -75,7 +75,11 @@ export default function RestaurantCardScreen() {
         canContainAllergens: item?.canContainAllergens,
         nutritonalValues: item?.nutritonalValues,
       },
-    ]);
+    );
+  };
+
+  const closeInfos = () => {
+    setInfos({});
   };
 
   /**
@@ -97,23 +101,20 @@ export default function RestaurantCardScreen() {
     return keyBase;
   };
 
+  useEffect(() => {
+  }, [infos]);
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        <RestaurantCardInfos
-          props={{
-            title: meals[0].name,
-            imageUrl: meals[0].image.url,
-            description: meals[0].description,
-            ingredients: meals[0].ingredients,
-            allergens: meals[0].allergens,
-            canContainAllergens:
-              meals[0].canContainAllergens,
-            nutritonalValues: meals[0].nutritonalValues,
-          }}
-        />
+        {Object?.hasOwn(infos, "title") && (
+          <RestaurantCardInfos
+            props={infos}
+          />
+        )}
 
-        <FlatList
+        {!Object?.hasOwn(infos, "title") && (
+          <FlatList
           data={restaurantCard}
           horizontal={false}
           numColumns={2}
@@ -128,6 +129,8 @@ export default function RestaurantCardScreen() {
                 imageUrl: data.item.image.url,
                 price: data.item.prices.price,
                 priceCurrency: data.item.prices.currency,
+                ctaAction: showInfos,
+                ctaTarget: data.item,
               }}
             />
           )}
@@ -135,6 +138,7 @@ export default function RestaurantCardScreen() {
             generateKeyForListItem(item.name)
           }
         />
+        )}
       </ScrollView>
     </SafeAreaView>
   );

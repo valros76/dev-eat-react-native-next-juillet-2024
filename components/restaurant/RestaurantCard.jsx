@@ -1,4 +1,5 @@
 import { Feather } from "@expo/vector-icons";
+import { useEffect } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 
@@ -8,12 +9,17 @@ export default function RestaurantCard({props = {}}) {
     name,
     imageUrl,
     price,
-    priceCurrency
+    priceCurrency,
+    ctaAction = undefined,
+    ctaTarget = undefined,
   } = props;
 
   const initCardImage = (url = undefined) => {
     return url ? url : "https://cdn.pixabay.com/photo/2022/04/20/14/39/burger-7145332_1280.png";
   }
+
+  useEffect(() => {
+  });
 
   return (
     <View style={styles.restaurantCardContainer}>
@@ -38,6 +44,8 @@ export default function RestaurantCard({props = {}}) {
           name="eye"
           size={24}
           color="black"
+          onLongPress={() => (ctaAction && ctaTarget) && ctaAction(ctaTarget)}
+          onClick={() => (ctaAction && ctaTarget) && ctaAction(ctaTarget)}
         />
         <Text style={styles.restaurantCardPrice}>
           {price  ? price.toFixed(2) : "0.00"}{" "}
