@@ -51,7 +51,7 @@ export default function RestaurantCardInfos({ props = {} }) {
         {nutritonalValues && (
           <View style={styles.nutritionalValuesContainer}>
             <Text style={styles.nutritionalValuesContainerTitle}>
-              Valeur nutritionnelles
+              Valeurs nutritionnelles
             </Text>
 
             <View style={styles.nutritionalValuesDatas}>
