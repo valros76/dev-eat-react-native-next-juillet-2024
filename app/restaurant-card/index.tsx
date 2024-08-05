@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
 import Feather from "@expo/vector-icons/Feather";
+import { useEffect } from "react";
 
 export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
@@ -22,6 +23,14 @@ export default function RestaurantCardScreen() {
   const debug = (value:any) => {
     console.table(value);
     return true;
+  }
+
+  const generateKeyForListItem = (keyBase: string) => {
+    const randomIDLength = 12;
+    const randomID = Math.random().toString(36).substring(2, randomIDLength + 2);
+    keyBase = keyBase.replaceAll(" ", "").trim();
+    keyBase = `${keyBase}-${randomID}`;
+    return keyBase;
   }
 
   return (
@@ -45,7 +54,7 @@ export default function RestaurantCardScreen() {
                 </View>
               </View>
             )}
-            keyExtractor={(item) => item}
+            keyExtractor={(item) => generateKeyForListItem(item.name)}
           />
       </ScrollView>
     </SafeAreaView>
