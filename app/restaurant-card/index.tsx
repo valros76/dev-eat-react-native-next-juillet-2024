@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
 import Feather from "@expo/vector-icons/Feather";
-import { useEffect } from "react";
 
 export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
@@ -24,10 +23,6 @@ export default function RestaurantCardScreen() {
     console.table(value);
     return true;
   }
-
-  useEffect(() => {
-    console.table(restaurantCard);
-  });
 
   return (
     <SafeAreaView style={styles.container}>
