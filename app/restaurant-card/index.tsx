@@ -10,13 +10,13 @@ import {
 import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
 import Feather from "@expo/vector-icons/Feather";
 import { useEffect } from "react";
+import { RestaurantCard } from "@/components/restaurant";
 
 export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
     useRestaurantContext();
 
   /**
-   * TODO : Améliorer la composition, en atomisant les composants de la page.
    * TODO : Créer un composant d'affichage de carte complète, un composant d'affichage de plat/menu, un composant modal qui affichera les informations du plat ou du menu.
    * TODO : Simuler la création d'un panier de commande.
    */
@@ -48,35 +48,14 @@ export default function RestaurantCardScreen() {
             gap:12,
           }}
           renderItem={(data: any) => (
-            <View style={styles.restaurantCardContainer}>
-              <Text style={styles.restaurantCardTitle}>
-                {data.item.name}
-              </Text>
-              
-              <View
-                style={styles.restaurantCardImageContainer}
-              >
-                <Image
-                  source={{
-                    uri: data.item.image.url,
-                  }}
-                  style={styles.restaurantCardImage}
-                  resizeMode="contain"
-                />
-              </View>
-
-              <View style={styles.priceContainer}>
-                <Feather
-                  name="eye"
-                  size={24}
-                  color="black"
-                />
-                <Text style={styles.restaurantCardPrice}>
-                  {data.item.prices.price.toFixed(2)}{" "}
-                  {data.item.prices.currency}
-                </Text>
-              </View>
-            </View>
+            <RestaurantCard
+              props={{
+                name: data.item.name,
+                imageUrl: data.item.image.url,
+                price: data.item.prices.price,
+                priceCurrency: data.item.prices.currency,
+              }}
+            />
           )}
           keyExtractor={(item) =>
             generateKeyForListItem(item.name)
