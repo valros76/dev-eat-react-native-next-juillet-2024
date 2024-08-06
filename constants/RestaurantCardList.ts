@@ -74,6 +74,81 @@ export const mealsList = [
         saltUnit: "g"
       }
     },
+  },
+  {
+    name: "Cheesy Smoky BBQ",
+    description: [
+      "Voici le Cheesy Smoky BBQ : Un pain au blé torréfié, une sauce smoky chipotle, une viande grillée à la flamme, des tranches de bacon et un pané cheesy pour plus de gourmandise.",
+    ],
+    image: {
+      url: "assets/images/cheesy-smoky-bbq.png"
+    },
+    stock:{
+      quantity: 30,
+    },
+    prices: {
+      hasInPromo: false,
+      promotion: "34%",
+      price: 9.40,
+      currency: "€",
+    },
+    ingredients: [
+      "Pain au blé torréfié",
+      "Sauce smoky chipotle",
+      "Rondelles d'oignons frais",
+      "Tranches de tomates fraîches (2 tranches)",
+      "Bacon fumé (3 tranches)",
+      "Pané cheesy",
+      "Viande grillée à la flamme",
+      "Sauce smoky chipotle",
+      "Pain au blé torréfié"
+    ],
+    allergens: [
+      "Gluten",
+      "Moutarde",
+      "Oeuf",
+      "Lait"
+    ],
+    canContainAllergens: [
+      "Graines de sésame",
+      "Céleri",
+      "Soja",
+      "Fruits à coques"
+    ],
+    nutritonalValues: {
+      part: {
+        energeticValues: "914",
+        energeticValuesUnit: "kcal",
+        fattySubstances: "53",
+        fattySubstanceUnit: "g",
+        saturatedFattyAcids: "16",
+        saturatedFattyAcidsUnit: "g",
+        proteins: "43",
+        proteinsUnit: "g",
+        carbonhydrates: "65",
+        carbonhydratesUnit: "g",
+        fastSugars: "9.9",
+        fastSugarsUnit: "g",
+        salt: "3.20",
+        saltUnit: "g"
+      },
+      perCentGrams: {
+        energeticValues: "290",
+        energeticValuesUnit: "kcal",
+        fattySubstances: "17",
+        fattySubstanceUnit: "g",
+        saturatedFattyAcids: "5.00",
+        saturatedFattyAcidsUnit: "g",
+        proteins: "14",
+        proteinsUnit: "g",
+        carbonhydrates: "21",
+        carbonhydratesUnit: "g",
+        fastSugars: "3.10",
+        fastSugarsUnit: "g",
+        salt: "1",
+        saltUnit: "g"
+      }
+    },
   }
 ];
 

@@ -1,11 +1,9 @@
 import {
   FlatList,
-  Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
-  View,
+  useWindowDimensions,
 } from "react-native";
 import { useRestaurantContext } from "@/shared/contexts/RestaurantContext";
 import Feather from "@expo/vector-icons/Feather";
@@ -14,68 +12,25 @@ import {
   RestaurantCard,
   RestaurantCardInfos,
 } from "@/components/restaurant";
-
-type RestaurantCardInfos = {
-  title?: string;
-  imageUrl?: string;
-  description?: string;
-  ingredients?: string[];
-  allergens?: string[];
-  canContainAllergens?: string[];
-  nutritonalValues?: {
-    part?: {
-      energeticValues?: string;
-      energeticValuesUnit?: string;
-      fattySubstances?: string;
-      fattySubstanceUnit?: string;
-      saturatedFattyAcids?: string;
-      saturatedFattyAcidsUnit?: string;
-      proteins?: string;
-      proteinsUnit?: string;
-      carbonhydrates?: string;
-      carbonhydratesUnit?: string;
-      fastSugars?: string;
-      fastSugarsUnit?: string;
-      salt?: string;
-      saltUnit?: string;
-    };
-    perCentsGram?: {
-      energeticValues?: string;
-      energeticValuesUnit?: string;
-      fattySubstances?: string;
-      fattySubstanceUnit?: string;
-      saturatedFattyAcids?: string;
-      saturatedFattyAcidsUnit?: string;
-      proteins?: string;
-      proteinsUnit?: string;
-      carbonhydrates?: string;
-      carbonhydratesUnit?: string;
-      fastSugars?: string;
-      fastSugarsUnit?: string;
-      salt?: string;
-      saltUnit?: string;
-    };
-  };
-};
+import { RestaurantCardInfosType } from "@/shared/types/RestaurantCardInfosType";
 
 export default function RestaurantCardScreen() {
   const { restaurantCard, meals, restaurantMenus } =
     useRestaurantContext();
 
-  const [infos, setInfos] = useState<RestaurantCardInfos>({});
+  const [infos, setInfos] =
+    useState<RestaurantCardInfosType>({});
 
   const showInfos = (item: any) => {
-    setInfos(
-      {
-        title: item?.name,
-        imageUrl: item?.image?.url,
-        description: item?.description,
-        ingredients: item?.ingredients,
-        allergens: item?.allergens,
-        canContainAllergens: item?.canContainAllergens,
-        nutritonalValues: item?.nutritonalValues,
-      },
-    );
+    setInfos({
+      title: item?.name,
+      imageUrl: item?.image?.url,
+      description: item?.description,
+      ingredients: item?.ingredients,
+      allergens: item?.allergens,
+      canContainAllergens: item?.canContainAllergens,
+      nutritonalValues: item?.nutritonalValues,
+    });
   };
 
   const closeInfos = () => {
@@ -101,29 +56,33 @@ export default function RestaurantCardScreen() {
     return keyBase;
   };
 
-  useEffect(() => {
-  }, [infos]);
+  useEffect(() => {}, [infos]);
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        {Object?.hasOwn(infos, "title") && (
-          <RestaurantCardInfos
-            props={{
-              ...infos,
-              ctaAction: closeInfos,
-            }}
-          />
-        )}
+      {Object?.hasOwn(infos, "title") && (
+        <RestaurantCardInfos
+          props={{
+            ...infos,
+            ctaAction: closeInfos,
+          }}
+        />
+      )}
 
-        {!Object?.hasOwn(infos, "title") && (
-          <FlatList
+      {!Object?.hasOwn(infos, "title") && (
+        <FlatList
           data={restaurantCard}
           horizontal={false}
           numColumns={2}
           contentContainerStyle={styles.restaurantCardGrid}
           columnWrapperStyle={{
+            width:"auto",
+            maxWidth:"100%",
+            justifyContent:"center",
+            alignItems:"center",
+            flexWrap:"wrap",
             gap: 12,
+            marginHorizontal:"auto",
           }}
           renderItem={(data: any) => (
             <RestaurantCard
@@ -141,8 +100,7 @@ export default function RestaurantCardScreen() {
             generateKeyForListItem(item.name)
           }
         />
-        )}
-      </ScrollView>
+      )}
     </SafeAreaView>
   );
 }
@@ -160,6 +118,7 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
     paddingVertical: 24,
     paddingHorizontal: 12,
+    gap: 12,
   },
   restaurantCardContainer: {
     width: 220,

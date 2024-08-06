@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import {CustomText} from "@/components/globals";
 
 
 export default function Localisation({ props = {} }){
@@ -12,8 +13,12 @@ export default function Localisation({ props = {} }){
 
   return(
     <View style={styles.container}>
-      <Text style={styles.localisation}>{roadNumber} {roadName}</Text>
-      <Text style={styles.localisation}>{postalCode}, {city}</Text>
+      <CustomText props={{
+        boldMode: true,
+      }} style={styles.localisation}>{roadNumber} {roadName}</CustomText>
+      <CustomText props={{
+        boldMode: true,
+      }} style={styles.localisation}>{postalCode}, {city}</CustomText>
     </View>
   );
 }

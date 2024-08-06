@@ -1,16 +1,20 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
+import CustomText from "./CustomText";
 
 
 export default function Title({children}){
   return(
-    <Text style={styles.title}>
+    <CustomText props={{
+      titleMode: true,
+    }} style={styles.title}>
       {children}
-    </Text>
+    </CustomText>
   );
 }
 
 const styles = StyleSheet.create({
   title:{
+    fontFamily:"System",
     fontSize:36,
     fontWeight:"bold",
     letterSpacing:.36,

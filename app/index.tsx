@@ -3,7 +3,6 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
   View,
   useWindowDimensions,
 } from "react-native";
@@ -55,9 +54,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 36,
     paddingVertical: 24,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
   },
 });

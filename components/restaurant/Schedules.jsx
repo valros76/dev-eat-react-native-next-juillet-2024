@@ -1,5 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-
+import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
+import { CustomText } from "@/components/globals";
 
 export default function Schedules({ props = {} }) {
 
@@ -57,25 +57,29 @@ export default function Schedules({ props = {} }) {
   ];
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={customDatas || schedulesDatas}
+        horizontal={false} 
+        scrollEnabled={false}
         renderItem={(data) => (
           <View style={styles.schedulesContainer}>
-            <Text style={styles.day}>{data.item.day}</Text>
+            <CustomText props={{
+              titleMode: true,
+            }} style={styles.day}>{data.item.day}</CustomText>
             {!data.item.isClosed && (
               <>
-                <Text style={styles.schedules}>{data.item.lunch}</Text>
-                <Text style={styles.schedules}>{data.item.dinner}</Text>
+                <CustomText style={styles.schedules}>{data.item.lunch}</CustomText>
+                <CustomText style={styles.schedules}>{data.item.dinner}</CustomText>
               </>
             )}
             {data.item.isClosed && (
-              <Text style={styles.schedules}>Fermé</Text>
+              <CustomText style={styles.schedules}>Fermé</CustomText>
             )}
           </View>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -102,6 +106,7 @@ const styles = StyleSheet.create({
   schedules: {
     fontSize: 16,
     letterSpacing: .33,
+    fontWeight:500,
     textAlign:"center",
   }
 });
