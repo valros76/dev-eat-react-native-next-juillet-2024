@@ -67,9 +67,7 @@ export default function RestaurantCardInfos({ props = {} }) {
             {imageUrl && (<View style={styles.imageContainer}>
               <Image
                 style={styles.image}
-                source={{
-                  uri: imageUrl
-                }}
+                source={imageUrl}
                 resizeMode="contain"
               />
             </View>)}
