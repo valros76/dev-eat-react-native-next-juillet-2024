@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   restaurantCardTitle: {
-    fontFamily: "Unna Bold, Roboto, San Francisco",
+    fontFamily: "Unna Bold",
     fontSize: 20,
     fontWeight: "bold",
     letterSpacing: .20,

@@ -435,12 +435,13 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   nutritionalValuesContainer: {
-    width: "100%",
+    width: 600,
+    maxWidth: "100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
     paddingHorizontal: 24,
-    gap: 6,
+    gap: 12,
     boxShadow: "inset 0 -1px 6px -5px #333, inset 0 1px 6px -5px #333, inset -1px 0 6px -5px #333, inset 1px 0 6px -5px #333",
   },
   nutritionalValuesContainerTitle: {
