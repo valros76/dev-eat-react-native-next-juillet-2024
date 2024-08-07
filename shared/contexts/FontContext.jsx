@@ -32,7 +32,7 @@ const FontProvider = ({children}) => {
   }, [loadedFonts, errorFonts]);
 
   if (!loadedFonts) return null
-
+  
   return(
     <FontContext.Provider value={{
       loadedFonts, 
