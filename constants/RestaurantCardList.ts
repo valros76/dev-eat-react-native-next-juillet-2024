@@ -6,7 +6,7 @@ export const mealsList = [
       "Une viande de boeuf grillé à la flamme, une sauce onctueuse, des tomates fraîches, une salade croquante, des cornichons et des oignons."
     ],
     image: {
-      url: "assets/images/whopper.png"
+      url: require("../assets/images/whopper.png")
     },
     stock:{
       quantity: 50,
@@ -81,7 +81,7 @@ export const mealsList = [
       "Voici le Cheesy Smoky BBQ : Un pain au blé torréfié, une sauce smoky chipotle, une viande grillée à la flamme, des tranches de bacon et un pané cheesy pour plus de gourmandise.",
     ],
     image: {
-      url: "assets/images/cheesy-smoky-bbq.png"
+      url: require("../assets/images/cheesy-smoky-bbq.png")
     },
     stock:{
       quantity: 30,
@@ -289,7 +289,7 @@ export const menusList = [
   {
     name: "Menu Whopper",
     image: {
-      url: "assets/images/menu-whopper.png"
+      url: require("../assets/images/menu-whopper.png")
     },
     prices: {
       hasInPromo: false,

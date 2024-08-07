@@ -231,7 +231,7 @@ export default function RestaurantCardInfos({ props = {} }) {
 
         </View>
       </ScrollView>
-    </SafeAreaView >
+    </SafeAreaView>
   );
 }
 
@@ -253,8 +253,8 @@ const styles = StyleSheet.create({
   },
   restaurantCardMainInfos: {
     width: "100%",
+    maxWidth:"100%",
     gap: 0,
-    paddingHorizontal: 24,
   },
   title: {
     width: "auto",
@@ -283,7 +283,8 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   ingredientsSection: {
-    width: "100%",
+    width: 600,
+    maxWidth:"100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
@@ -313,7 +314,8 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   allergensSection: {
-    width: "100%",
+    width: 600,
+    maxWidth:"100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
@@ -343,7 +345,8 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   canContainAllergensSection: {
-    width: "100%",
+    width: 600,
+    maxWidth:"100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
@@ -413,6 +416,7 @@ const styles = StyleSheet.create({
   closeIcon: {
     width: 28,
     height: 28,
+    lineHeight:28,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -421,6 +425,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#e23926",
     textAlign: "center",
     boxShadow: "0 2px 0 -1px #333",
-    marginLeft: "auto",
   }
 });

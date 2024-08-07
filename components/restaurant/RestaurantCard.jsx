@@ -15,10 +15,6 @@ export default function RestaurantCard({ props = {} }) {
     ctaTarget = undefined,
   } = props;
 
-  const initCardImage = (url = undefined) => {
-    return url ? url : "https://cdn.pixabay.com/photo/2022/04/20/14/39/burger-7145332_1280.png";
-  }
-
   return (
     <View style={styles.restaurantCardContainer}>
       <CustomText style={styles.restaurantCardTitle}>
@@ -29,9 +25,7 @@ export default function RestaurantCard({ props = {} }) {
         style={styles.restaurantCardImageContainer}
       >
         <Image
-          source={{
-            uri: initCardImage(imageUrl),
-          }}
+          source={imageUrl}
           style={styles.restaurantCardImage}
           resizeMode="contain"
         />
