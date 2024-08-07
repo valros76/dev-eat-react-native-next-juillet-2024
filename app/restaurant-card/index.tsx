@@ -30,6 +30,7 @@ export default function RestaurantCardScreen() {
       allergens: item?.allergens,
       canContainAllergens: item?.canContainAllergens,
       nutritonalValues: item?.nutritonalValues,
+      composition: item?.composition,
     });
   };
 

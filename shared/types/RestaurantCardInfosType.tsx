@@ -2,6 +2,7 @@ export type RestaurantCardInfosType = {
   title?: string;
   imageUrl?: string;
   description?: string;
+  composition?:any,
   ingredients?: string[];
   allergens?: string[];
   canContainAllergens?: string[];

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { StyleSheet, Text } from "react-native";
 
 
-export default CustomText = ({props = {}, children = {}, style={}}) => {
+export default CustomText = ({ props = {}, children = {}, style = {} }) => {
   const {
     titleMode = false,
     italicMode = false,
@@ -15,42 +15,42 @@ export default CustomText = ({props = {}, children = {}, style={}}) => {
   const [fontStyle, setFontStyle] = useState("");
 
   useEffect(() => {
-    switch(true){
+    switch (true) {
       case (props.titleMode):
         setFontFamily("System");
         setFontWeight("bold");
         setFontStyle("normal");
-      break;
+        break;
       case (props.italicMode):
         setFontFamily("Unna Italic");
         setFontWeight("regular");
         setFontStyle("italic");
-      break;
+        break;
       case (props.boldMode):
         setFontFamily("Unna Bold");
         setFontWeight("bold");
         setFontStyle("normal");
-      break;
+        break;
       case (props.italicBoldMode):
         setFontFamily("Unna Italic Bold");
         setFontWeight("bold");
         setFontStyle("italic");
-      break;
+        break;
       default:
         setFontFamily("Unna Regular");
         setFontWeight("regular");
         setFontStyle("normal");
-      break;
+        break;
     }
   }, [props.titleMode, props.italicMode, props.boldMode, props.italicBoldMode]);
 
-  return(
+  return (
     <Text style={{
       ...styles.text,
-      ...style,
       fontFamily: fontFamily,
       fontStyle: fontStyle,
       fontWeight: fontWeight,
+      ...style,
     }}>
       {children}
     </Text>
@@ -59,8 +59,8 @@ export default CustomText = ({props = {}, children = {}, style={}}) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily:"Unna Regular, Roboto, San Francisco",
-    fontSize:16,
-    fontWeight:400,
+    fontFamily: "Unna Regular, Roboto, San Francisco",
+    fontSize: 16,
+    fontWeight: 400,
   }
 });

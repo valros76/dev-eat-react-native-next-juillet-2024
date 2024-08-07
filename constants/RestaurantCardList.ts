@@ -301,9 +301,7 @@ export const menusList = [
       meal: mealsList.filter((item) => item.name.toLowerCase() === "whopper"),
       drink: drinksList.filter((item) => item.name.toLowerCase() === "coca-cola sans sucres vanille"),
       sideDish: sideDishesList.filter((item) => item.name.toLowerCase() === "frites"),
-      gift: {
-        ...giftsList
-      }
+      gift: giftsList
     }
   },
 ];

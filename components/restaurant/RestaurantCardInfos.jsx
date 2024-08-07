@@ -10,6 +10,7 @@ export default function RestaurantCardInfos({ props = {} }) {
     title = "Inconnu",
     imageUrl = "https://cdn.pixabay.com/photo/2022/04/20/14/39/burger-7145332_1280.png",
     description = undefined,
+    composition = undefined,
     ingredients = undefined,
     allergens = undefined,
     canContainAllergens = undefined,
@@ -27,21 +28,28 @@ export default function RestaurantCardInfos({ props = {} }) {
 
   const nutritionalValuesIndicator = "(par portion / par 100g)";
 
+  const debug = (value) => {
+    console.table(value);
+  }
+
   const generateKeyForListItem = (keyBase) => {
     const randomIDLength = 12;
     const randomID = Math.random()
       .toString(36)
       .substring(2, randomIDLength + 2);
+    if (typeof keyBase === "object") {
+      keyBase = JSON.stringify(keyBase);
+    }
     keyBase = keyBase.replaceAll(" ", "").trim();
     keyBase = `${keyBase}-${randomID}`;
     return keyBase;
   };
 
   useEffect(() => {
-  }, [props.title, props.description, props.imageUrl, props.ingredients, props.allergens, props.canContainAllergens, props.nutritonalValues, props.ctaAction]);
+  }, [props.title, props.description, props.imageUrl, props.ingredients, props.allergens, props.canContainAllergens, props.nutritonalValues, props.ctaAction, props.composition]);
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <ScrollView style={styles.scrollView}>
         <View style={styles.container}>
           <Pressable
@@ -77,6 +85,59 @@ export default function RestaurantCardInfos({ props = {} }) {
             }} lineHeight={1.5} key={generateKeyForListItem(item)}>
               {item}
             </CustomText>)))}
+
+            {composition && (<View style={styles.compositionSection}>
+
+              {composition?.gift && (
+                <CustomText style={{...styles.compositionChildMenuAlert}} lineHeight={3}>
+                  Menu enfant
+                </CustomText>
+              )}
+
+              {composition?.meal && (
+                <CustomText style={{ ...styles.compositionSectionTitle }} lineHeight={1.5}>
+                  Plats :
+                </CustomText>
+              )}
+              {composition?.meal && (composition.meal.map((item) => (
+                <CustomText style={{ ...styles.compositionSectionContent }} lineHeight={1.5} key={generateKeyForListItem(item.name)}>
+                  {item.name}
+                </CustomText>
+              )))}
+
+              {composition?.meal && (
+                <CustomText style={{ ...styles.compositionSectionTitle }} lineHeight={1.5}>
+                  Boissons :
+                </CustomText>
+              )}
+              {composition?.drink && (composition.drink.map((item) => (
+                <CustomText style={{ ...styles.compositionSectionContent }} lineHeight={1.5} key={generateKeyForListItem(item.name)}>
+                  {item.name}
+                </CustomText>
+              )))}
+
+              {composition?.meal && (
+                <CustomText style={{ ...styles.compositionSectionTitle }} lineHeight={1.5}>
+                  Accompagnements :
+                </CustomText>
+              )}
+              {composition?.sideDish && (composition.sideDish.map((item) => (
+                <CustomText style={{ ...styles.compositionSectionContent }} lineHeight={1.5} key={generateKeyForListItem(item.name)}>
+                  {item.name}
+                </CustomText>
+              )))}
+
+              {composition?.meal && (
+                <CustomText style={{ ...styles.compositionSectionTitle }} lineHeight={1.5}>
+                  Cadeaux :
+                </CustomText>
+              )}
+              {composition?.gift && (composition.gift.map((item) => (
+                <CustomText style={{ ...styles.compositionSectionContent }} lineHeight={1.5} key={generateKeyForListItem(item)}>
+                  {item?.name} : {item?.description}
+                </CustomText>
+              )))}
+            </View>)}
           </View>
 
           {ingredients &&
@@ -251,7 +312,7 @@ const styles = StyleSheet.create({
   },
   restaurantCardMainInfos: {
     width: "100%",
-    maxWidth:"100%",
+    maxWidth: "100%",
     gap: 0,
   },
   title: {
@@ -263,7 +324,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: 150,
-    maxWidth:"100%",
+    maxWidth: "100%",
     height: 150,
     maxWidth: 150,
     marginHorizontal: "auto",
@@ -282,7 +343,7 @@ const styles = StyleSheet.create({
   },
   ingredientsSection: {
     width: 600,
-    maxWidth:"100%",
+    maxWidth: "100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
@@ -313,7 +374,7 @@ const styles = StyleSheet.create({
   },
   allergensSection: {
     width: 600,
-    maxWidth:"100%",
+    maxWidth: "100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
@@ -344,7 +405,7 @@ const styles = StyleSheet.create({
   },
   canContainAllergensSection: {
     width: 600,
-    maxWidth:"100%",
+    maxWidth: "100%",
     backgroundColor: "#FBFAF4",
     borderRadius: 12,
     paddingVertical: 12,
@@ -407,6 +468,35 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     fontStyle: "italic",
   },
+  compositionSection: {
+    width:"100%",
+    gap:6,
+  },
+  compositionChildMenuAlert:{
+    width: "auto",
+    maxWidth: "100%",
+    backgroundColor: "#f3fcee",
+    textAlign:"center",
+    fontSize:20,
+    fontWeight:900,
+    marginVertical:12,
+    marginHorizontal:"auto",
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    gap: 12,
+    boxShadow: "inset 0 -1px 6px -5px #333, inset 0 1px 6px -5px #333, inset -1px 0 6px -5px #333, inset 1px 0 6px -5px #333",
+  },
+  compositionSectionTitle:{
+    fontSize:18,
+    fontWeight:700,
+    letterSpacing:.18,
+  },
+  compositionSectionContent:{
+    fontSize:14,
+    fontWeight:400,
+    letterSpacing:.14,
+  },
   closeIconButton: {
     width: "auto",
     marginLeft: "auto",
@@ -414,7 +504,7 @@ const styles = StyleSheet.create({
   closeIcon: {
     width: 28,
     height: 28,
-    lineHeight:28,
+    lineHeight: 28,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
